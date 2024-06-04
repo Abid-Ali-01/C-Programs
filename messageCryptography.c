@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-void encription(char msg[]){
+void encryption(char msg[]){
     int i = 0;
     while (msg[i] != '\0') {  
         msg[i] += 5;
         i++;
 }
- printf("Message Encripted!\n");
+ printf("Message Encrypted!\n");
  printf("%s", msg);
 }
 
-void decription(char msg2[]){
+void decryption(char msg2[]){
     int j=0;
     while(msg2[j] != '\0'){
         msg2[j] -=5;
        j++;
 }
-printf("\nMessage Decripted\n");
+printf("\nMessage Decrypted\n");
 printf("%s",msg2);
 }
 
@@ -25,7 +25,7 @@ char mymsg[100];
 printf("Enter Your Msg \n");
 fgets(mymsg, sizeof(mymsg),stdin);
 
-encription(mymsg);
-decription(mymsg);
+encryption(mymsg);
+decryption(mymsg);
     return 0;
 }
