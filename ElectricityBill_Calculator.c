@@ -22,7 +22,7 @@ int main() {
     } 
     
     else if (units > 300) {
-        totalCost = (100 * rate1) + (100 * rate2) + (100 * rate3) + ((units - 300) + additionalCost);
+        totalCost = (100 * rate1) + (100 * rate2) + (100 * rate3)  + additionalCost;
     }
 
     printf("You Bill Is :  %d\n", totalCost);
