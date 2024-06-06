@@ -1,34 +1,31 @@
 #include <stdio.h>
 
 int main() {
-    int unit;
-    int result=0;
-    printf("Enter Units Consumed \n");
-    scanf("%d", &unit);
- 
- if(unit >= 1 && unit <= 100){
-     result= unit * 20;
-     printf("Your Bill Is %d", result);
- }
- 
- else if (unit >100 && unit <= 200) {
-     result= unit * 25;
-     printf("Your Bill Is %d", result);
+    int units;
+    int rate1 = 20, rate2 = 25, rate3 = 30;
+    int additionalCost = 2000;
+    int totalCost = 0;
 
- }
-  else if (unit >200 && unit <= 300) {
-     result= unit * 30;
-     printf("Your Bill Is %d", result);
+    printf("Enter Units Consumed: ");
+    scanf("%d", &units);
 
- }
-   else if (unit > 300) {
-     result= unit * 30 + 2000;
-     printf("Your Bill Is %d Including RS: 2000 Aditional Charges", result);
+    if (units <= 100 ) {        
+        totalCost = units * rate1;
+    } 
 
- }
- else{
-     printf("Invalid Input. ");
- }
- 
+    else if (units >= 101 && units<=200) {
+        totalCost = (100 * rate1) + ((units - 100) * rate2);
+    } 
+    
+    else if (units >=201 && units <=300) {
+        totalCost = (100 * rate1) + (100 * rate2) + ((units - 200) * rate3);
+    } 
+    
+    else if (units > 300) {
+        totalCost = (100 * rate1) + (100 * rate2) + (100 * rate3) + ((units - 300) + additionalCost);
+    }
+
+    printf("You Bill Is :  %d\n", totalCost);
+
     return 0;
 }
